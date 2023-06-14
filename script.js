@@ -81,7 +81,7 @@ console.log(produtos44.mostrar_dados());
 const div44 = document.getElementById('lista_produtos');
 div44.insertAdjacentHTML('afterbegin', produtos44.mostrar_dados());
 
-const produtos5 = new Produto_Destaque("Kombi Hello Kitty", "05/05/2023", "1326", "250", "https://ae01.alicdn.com/kf/S1f90915b98af47a49e09d4b4f693cf9dN/Hot-Wheels-Kool-Kombi-Red-Edition-Limited-Hello-Kitty-1-64-scale-vehicles-Car-Toy-for.jpg_220x220.jpg_.webp")
+const produtos5 = new Produto_Destaque("Kombi Hello Kitty", "05/05/2023", "1326", "250", "https://ae01.alicdn.com/kf/S1f90915b98af47a49e09d4b4f693cf9dN/Hot-Wheels-Kool-Kombi-Red-Edition-Limited-Hello-Kitty-1-64-scale-vehicles-Car-Toy-for.jpg_220x220.jpg_.webp");
 console.log(produtos5.mostrar_Produto_Destaque());
 const div5 = document.getElementById('produto_destaque');
 div5.insertAdjacentHTML('afterbegin', produtos5.mostrar_Produto_Destaque());
