@@ -14,8 +14,16 @@ class Produto {
         this.preco = preco;
     }
 
+mostrarAtributos() {
+    try {
+      return this.mostrar_dados();
+    } catch (error) {
+      return error
+    }
+  }
+
     mostrar_dados(){
-        if (this.nome != ""){
+        if (this.nome  != "" && this.data_do_cadastro != "" &&  this.descricao_do_produto != "" &&  this.preco != ""){
         return `
         <div class="produto-cardd">
         <div class="rosa">${this.nome}</div>
@@ -39,6 +47,7 @@ class Produto_Destaque extends Produto{
         }
     
         mostrar_Produto_Destaque(){
+            if (this.nome  != "" && this.data_do_cadastro != "" &&  this.descricao_do_produto != "" &&  this.preco != ""){
             return `
             <div class="produto-card">
             <img src="${this.produto_destaque}">
@@ -48,20 +57,16 @@ class Produto_Destaque extends Produto{
         <div class="rosa">${this.preco}</div>
         </div>
         `; 
+    } else {
+        throw new MeuErro("Mensagem de erro");
+      }
+    }
           //return this.nome + this.data_do_cadastro + this.descricao_do_produto + this.preco + this.produto_destaque;
         }
         
-}
 
-mostrarAtributos() {
-    try {
-      return this.atributos();
-    } catch (error) {
-      return error
-    }
-  }
 
-const produtos = new Produto_Destaque("Sanduicheira Hello Kitty", "26/02/2023", "1234", "410", "https://ae01.alicdn.com/kf/HTB1XYcyHVXXXXa4XpXXq6xXFXXXM/Hellokitty-sandwich-maker-bread-maker-Toaster-2-min-make-a-sandwich-or-bread-breakfast-maker-cooking.jpg_220x220.jpg_.webp");
+const produtos = new Produto_Destaque("", "26/02/2023", "1234", "410", "https://ae01.alicdn.com/kf/HTB1XYcyHVXXXXa4XpXXq6xXFXXXM/Hellokitty-sandwich-maker-bread-maker-Toaster-2-min-make-a-sandwich-or-bread-breakfast-maker-cooking.jpg_220x220.jpg_.webp");
 console.log(produtos.mostrar_Produto_Destaque());
 const div = document.getElementById('produto_destaque');
 div.insertAdjacentHTML('afterbegin', produtos.mostrar_Produto_Destaque());
